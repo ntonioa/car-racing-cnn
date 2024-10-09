@@ -1,0 +1,13 @@
+\section{Driving a race car}
+\label{sec:driving_race_car}
+In order to allow the two models to drive a race car in the Car Racing environment, they should be included in a feedback loop, as shown in Figure \ref{fig:game_loop}. Based on an initial observation, the agent (the CNN) takes an action, which is passed to the environment. The environment then computes a response and returns a new observation, which is passed to the agent. The agent then takes another action, and so on, until the game ends (because of the car either crashing or completing a full lap, or because of the expiration of the maximum time of 30 seconds).
+
+\input{figures/game_loop.tex}
+
+\noindent Mainly due to the class weights choice of Sec. \ref{sec:effect_of_class_weights}, both the models are capable of playing the racing game with a good degree of success on a great number of randomly-generated tracks, as shown in Fig. \ref{fig:car_racing} and in the video linked in the footnote\footnote{YouTube video showing the two models driving on randomly-generated tracks: \url{https://youtu.be/EUGlU5wEMvg}}. However, there is still a lot of room for improvement, as the models sometimes act in a way that is not optimal and that can possibly lead to "crashes", as shown in Fig. \ref{fig:car_racing_fail}. With this in mind, it would probably be best to combine a CNN model with one of reinforcement learning that also exploits the reward system of the Gym environment.
+
+\input{figures/car_racing.tex}
+
+\input{figures/car_racing_fail.tex}
+
+

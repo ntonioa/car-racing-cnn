@@ -1,0 +1,8 @@
+\subsection{Model evaluation}
+The performance of the two models can be evaluated by looking at some specific metrics. In particular, the following ones are considered:
+\begin{enumerate}
+    \item \textbf{Loss and accuracy vs. epochs graphs}: observing the trend of these metric during the fitting phase is useful to understand whether the model is overfitting or not;
+    \item \textbf{Classification report}: having a look at the main classification metrics both globally and class-wise is particularly useful when the dataset is unbalanced, as in this case;
+    \item \textbf{Confusion matrix}: this completes the classification report by showing the number of correct and incorrect predictions for each class.
+\end{enumerate}
+Obviously, the models could also be evaluated on the basis of how well they manage to drive the car in the Car Racing environment, but since we do not know the ground truth for the actions to be taken in each state or the relation with the validation set, this is not a reliable metric.

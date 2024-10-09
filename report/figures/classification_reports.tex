@@ -1,0 +1,47 @@
+\begin{table}[htbp]
+    \centering
+    
+    \begin{subtable}{\textwidth}
+        \centering
+        \begin{tabular}{cccc}
+            \toprule
+            \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+            \midrule
+            0 & 0.24 & 0.47 & 0.31 \\
+            1 & 0.38 & 0.58 & 0.46 \\
+            2 & 0.52 & 0.68 & 0.59 \\
+            3 & 0.87 & 0.68 & 0.76 \\
+            4 & 0.05 & 0.08 & 0.06 \\
+            \midrule
+            \textbf{Accuracy} & & & 0.65 \\
+            \textbf{Macro avg} & 0.41 & 0.50 & 0.44 \\
+            \textbf{Weighted avg} & 0.72 & 0.65 & 0.67 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Model 0.}
+    \end{subtable}
+    \vspace{0cm}\\
+
+    \begin{subtable}{\textwidth}
+        \centering
+        \begin{tabular}{cccc}
+            \toprule
+            \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+            \midrule
+            0 & 0.28 & 0.38 & 0.32 \\
+            1 & 0.36 & 0.54 & 0.43 \\
+            2 & 0.49 & 0.65 & 0.56 \\
+            3 & 0.84 & 0.70 & 0.77 \\
+            4 & 0.06 & 0.05 & 0.05 \\
+            \midrule
+            \textbf{Accuracy} & & & 0.65 \\
+            \textbf{Macro Avg} & 0.40 & 0.46 & 0.43 \\
+            \textbf{Weighted Avg} & 0.70 & 0.65 & 0.67 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Model 1.}
+    \end{subtable}
+    
+    \caption{Classification reports of the two models, showing class-wise precision, recall and f1-score, and global accuracy over the validation set.}
+    \label{tab:report}
+\end{table}

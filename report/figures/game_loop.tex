@@ -1,0 +1,14 @@
+\tikzstyle{block} = [rectangle, draw, fill=gray!20, align=center, rounded corners, minimum height=1cm, font=\small]
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \node [block] (block1) {Agent (CNN)};
+        \node [block, right=2cm of block1] (block2) {Environment};
+        
+        \path[->] (block1) edge [bend left=45] node[above] {Action} (block2);
+        \path[->] (block2) edge [bend left=45] node[below] {Observation} (block1);
+    \end{tikzpicture}
+    \caption{Closed loop between the CNN and the Car Racing environment.}
+    \label{fig:game_loop}
+\end{figure}

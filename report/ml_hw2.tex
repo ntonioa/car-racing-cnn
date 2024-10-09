@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[all]{hypcap}
+\usepackage{subcaption}
+\usepackage[left=3cm, right=3cm, top=3.5cm, bottom=3.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{subcaption}
+
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\title{Machine Learning - Homework \#2}
+\author{(2044902) Antonio Rapuano}
+\date{January 2024}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\setcounter{page}{1}
+
+\input{sections/introduction.tex}
+
+\section{Workflow}
+\input{sections/data_import_preprocessing.tex}
+\input{sections/cnn_tuning_fitting.tex}
+\input{sections/model_evaluation.tex}
+\input{sections/hyperparameter_fine_tuning.tex}
+
+\section{Results}
+\input{sections/loss_acc_vs_epochs.tex}
+\input{sections/classification_scores.tex}
+\input{sections/effect_of_class_weights.tex}
+
+\input{sections/conclusions.tex}
+
+\appendix
+\input{sections/driving_race_car.tex}
+
+\end{document}

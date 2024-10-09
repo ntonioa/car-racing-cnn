@@ -1,0 +1,15 @@
+\subsection{Classification scores}
+\label{sec:classification_scores}
+Even though we have taken many precautions with the purpose of maximizing the performance of the models, the actual results turned out to be quite disappointing. As a matter of fact, the classification reports in Tab. \ref{tab:report} show that the models are not able to correctly classify a great portion of the samples in the validation set.
+\\The important thing to notice is that the lowest scores come from the classification of class 4, i.e. \textit{brake}. The reason for this is probably due to the fact that it is the least represented in the dataset, and therefore the models have not been able to learn the features that characterize them. This is confirmed by the fact that the results become proportionally better the higher the number of samples in the specific class, even though they are still far from being good.
+
+\input{figures/classification_reports.tex}
+
+\noindent The increased level of detail provided by confusion matrices (see Fig. \ref{fig:conf_mat}) does not tell a different story. However, it is way more useful when it comes to adjusting the models in order to make them drive in the Car Racing environment: for instance, steering left instead of braking on a straight is not as big of a deal as accelerating instead of braking when a curve is coming up.
+
+\input{figures/confusion_matrices.tex}
+
+\noindent \\After having tried with minimum improvement and considerable effort to obtain better performance by tuning the structures and the hyperparameters of the models (see Sec. \ref{sec:effect_of_class_weights}), the logical conclusion is that the dataset needs to be improved and possibly its split into training and validation sets needs to be changed and/or randomized.
+
+
+

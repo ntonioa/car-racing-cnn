@@ -1,0 +1,27 @@
+\subsection{CNN tuning and fitting}
+\label{sec:cnn_tuning_fitting}
+
+\noindent As requested, two convolutional neural networks have been implemented and trained. 
+
+\noindent \\The idea behind model 0 is to implement large filters that are able to capture the general structure of the input image (i.e., a tensor of shape $96 \times 96 \times 1$), which shrink in size as the network goes deeper. The fully-connected section is composed of three dense layers of decreasing number of units.
+\\On the other hand, model 1 implements smaller filters that are able to capture the details of the observations. Its dense part is made of two layers with a greater number of units than model 0.
+
+\noindent \\For both structures, depicted in Fig. \ref{fig:model_structures}, the following choices have been made:
+
+\begin{itemize}
+    \item the activation function is ReLU, except for the output layer, where softmax is used to obtain a probability distribution over the 5 classes;
+    \item the convolutional layers are followed by a max pooling layer with strides always equal to the pool size in order to reduce the dimensionality of the feature maps;
+    \item overfitting is prevented by using dropout layers after the dense layers, and by applying weight decay (with l2 regularization penalty always equal to 0.001) to the convolutional and dense layers.
+\end{itemize}
+
+\input{figures/model_structures.tex}
+
+\noindent Model 0 has 84,901 trainable parameters, while model 1 has 80,213.
+
+\noindent \\About the training phase, take note the following:
+
+\begin{itemize}
+    \item in both cases, the maximum epoch number is 50, the batch size is 64, and the loss function is sparse categorical crossentropy (since the labels are integers);
+    \item once again to prevent overfitting, early stopping is activated from the 20th epoch onwards with a patience of 6 epochs by monitoring loss over the validation set;
+    \item model 0 is trained with the Adam optimizer, while model 1 is trained with Nadam (a variant of Adam that incorporates Nesterov momentum), both with a learning rate of 0.001;
+\end{itemize}
